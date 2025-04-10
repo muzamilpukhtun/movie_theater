@@ -1,6 +1,6 @@
 import React from 'react'
 import { MoviesPage } from './MoviesPage'
-import Loader from '../loader'
+import Loader from '../Loader'
 
 const fetchMovies = async (query) => {
     const api = await fetch(`https://itunes.apple.com/search?term=${query}&media=movie`)
@@ -33,9 +33,9 @@ const Movies = async () => {
     return (
         <div>
 
-        <header>
+        <div>
             <h1 style={{padding:'10px'}}>Movie Theater</h1>
-        </header>
+        </div>
        <MoviesPage movies={movies}/>   
         </div>
     )

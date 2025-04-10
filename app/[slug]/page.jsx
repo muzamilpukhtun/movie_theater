@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-import Loader from "../loader";
+import Loader from "../Loader";
 const page = ({params}) => {
     const [movie,setMovie]=useState(null)
     const {slug}=React.use(params);
