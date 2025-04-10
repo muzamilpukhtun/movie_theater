@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(31, 41, 55);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(55, 65, 81);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(75, 85, 99);
+}
+
+
+
+/* GLOBAL STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+/* MOVIE ROW */
+.movie-row {
+  width: 1120px;
+  margin: auto;
+  margin-bottom: 2rem;
+  /* padding:  */
+}
+
+.movie-row h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.movie-row .flex {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+/* MOVIE CARD */
+.movie-card {
+  flex: 0 0 auto;
+  position: relative;
+  width: 12rem;
+  height: 20rem;
+  background-color: #000000;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.movie-card img,
+.movie-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card video {
+  opacity: 0;
+}
+
+.movie-card:hover video {
+  opacity: 1;
+}
+
+.movie-card .details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .details {
+  opacity: 1;
+}
+
+.movie-card .details h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card .details p {
+  font-size: 0.875rem;
+  margin: 0;
+  color: #b3b3b3;
+}
+
+/* MOVIE DETAIL PAGE */
+.movie-detail-page {
+  background-color: #141414;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.movie-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.movie-video {
+  width: 725px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.movie-info {
+  text-align: left;
+}
+
+.movie-info h1 {
+  font-size: 28px;
+}
+
+.movie-info p {
+  font-size: 16px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #b00710;
+}
+
+/* Fullscreen loader container */
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  /* Optional: Black background */
+}
+
+/* Spinner style */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  /* Light border */
+  border-top: 5px solid #ffffff;
+  /* Solid white top border for spinner effect */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
